@@ -1,0 +1,12 @@
+
+git remote add upstream git@github.com:lutter/ruby-augeas
+
+Pull in a single commit for file: ext/augeas/extconf.rb
+From this repo, https://github.com/uib/ruby-augeas, which is NOT a fork.
+This is to allow Darwin support.
+
+On mac, use homebrew to get augeas and libxml2, then install augeas like this:
+
+rake package
+sudo gem install pkg/ruby-augeas-0.5.0.gem --no-ri --no-rdoc -- --build-flags --with-cppflags="-I/usr/include/libxml2"
+
